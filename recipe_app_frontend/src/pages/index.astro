@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/MainLayout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import RecipeList from '../components/RecipeList.astro';
+import Auth from '../components/Auth.astro';
+---
+
+<Layout>
+  <Sidebar slot="sidebar" />
+  <main>
+    <Auth />
+    <RecipeList />
+  </main>
+</Layout>

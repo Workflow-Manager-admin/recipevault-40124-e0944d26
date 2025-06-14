@@ -1,0 +1,82 @@
+---
+/*
+  MainLayout for RecipeVault: 
+  Provides basis for a sidebar + main content area, includes theme colors & modern styles.
+*/
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>RecipeVault</title>
+    <style>
+      :root {
+        --color-primary: #4caf50;
+        --color-secondary: #ffc107;
+        --color-accent: #ff5722;
+        --color-bg: #fafafa;
+        --color-text: #222;
+        --sidebar-width: 220px;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--color-bg);
+        color: var(--color-text);
+        font-family: 'Inter', Arial, sans-serif;
+        min-height: 100vh;
+      }
+      .app-container {
+        display: flex;
+        min-height: 100vh;
+      }
+      .sidebar {
+        width: var(--sidebar-width);
+        background: var(--color-primary);
+        color: #fff;
+        padding: 2rem 1rem 1rem;
+        box-shadow: 2px 0 6px rgba(80,80,80,0.04);
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+      main {
+        flex: 1 1 0;
+        padding: 2rem 3vw 2rem 3vw;
+        background: var(--color-bg);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+      @media (max-width: 700px) {
+        .app-container {
+          flex-direction: column;
+        }
+        .sidebar {
+          width: 100%;
+          flex-direction: row;
+          gap: 1rem;
+          padding: 0.8rem 1rem;
+        }
+        main {
+          padding: 1.2rem 0.5rem;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="sidebar">
+        <slot name="sidebar" />
+      </div>
+      <slot />
+    </div>
+  </body>
+</html>

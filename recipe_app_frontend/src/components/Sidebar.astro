@@ -1,0 +1,33 @@
+---
+/*
+  Sidebar component: displays recipe categories and management link.
+*/
+const categories = [
+  'All Recipes',
+  'Breakfast',
+  'Lunch',
+  'Dinner',
+  'Snacks',
+  'Desserts'
+];
+---
+
+<div>
+  <h2 style="margin-top:0; font-size:1.5rem; font-weight:600;">Categories</h2>
+  <nav>
+    <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.4rem;">
+      {categories.map(cat => (
+        <li>
+          <a href="#" style="color: #fff; font-weight:500; display:block; padding:.25rem 0;">
+            {cat}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+  <div style="margin-top:2rem;">
+    <a href="#" style="display:inline-block; background: var(--color-secondary); color:#222; font-weight: 600; padding: 0.5rem 1.2rem; border-radius: 2rem; font-size:.85rem;">
+      Manage Categories
+    </a>
+  </div>
+</div>

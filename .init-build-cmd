@@ -1,0 +1,4 @@
+{
+    "command": "npm install && npm run build",
+    "working_directory": "/home/kavia/workspace/code-generation/recipevault-40124-e0944d26/recipe_app_frontend"
+}
